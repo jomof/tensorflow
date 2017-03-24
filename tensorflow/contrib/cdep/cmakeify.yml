@@ -1,0 +1,17 @@
+targets: [iOS, android]
+android:
+  lib: libtensorflow_inference.a
+  ndk:
+    cppFlags:
+    - -DCMAKE_CXX_FLAGS=-std=c++11
+    runtimes: [c++]
+    platforms: [12, 21]
+iOS:
+  lib:  libtensorflow_inference.a
+example: |
+   #include <sqlite3.h>
+   void test() {
+     sqlite3_initialize();
+   }
+   
+
